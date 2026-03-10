@@ -1,0 +1,1872 @@
+/* Базовые стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+    background-color: #ffffff;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.section-title {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    color: #ffffff;
+}
+
+/* Hero секция */
+.hero {
+    height: 100vh;
+    background: url('1.jpg') no-repeat center center/cover;
+    /* background-position: -100px 50px !important; */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: 0px 0px;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    padding-top: 70px;
+    padding-bottom: 80px;
+}
+
+/* Плеер - оптимизирован для мобильных */
+.music-player {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    padding: 0 15px;
+    z-index: 10;
+}
+
+.player-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    padding: 6px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    max-width: 350px;
+    margin: 0 auto;
+    height: 45px;
+}
+
+.player-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+.player-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: scale(1.05);
+}
+
+.player-info {
+    flex-grow: 1;
+    margin: 0 12px;
+}
+
+.player-title {
+    color: white;
+    font-size: 0.8rem;
+    display: block;
+    margin-bottom: 4px;
+    text-align: center;
+    letter-spacing: 0.5px;
+    opacity: 0.9;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 1px;
+    overflow: hidden;
+}
+
+.progress {
+    width: 30%;
+    height: 100%;
+    background: white;
+    border-radius: 1px;
+}
+
+/* Имена пары - оптимизированы для мобильных */
+.couple-names {
+    text-align: center;
+    color: white;
+    margin-top: 30px;
+}
+
+.couple-names h1 {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: 3.2rem;
+    font-weight: 300;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin: 8px 0;
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.6);
+    font-style: italic;
+}
+
+.names-separator {
+    margin: 5px 0;
+    position: relative;
+}
+
+.ampersand {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: 2rem;
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.9);
+    display: inline-block;
+    padding: 0 15px;
+}
+
+/* Счетчик - оптимизирован для мобильных 90 500px*/
+.countdown-container {
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2px);
+    border-radius: 12px;
+    padding: 20px 15px;
+    text-align: center;
+    width: 100%;
+    max-width: none;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: auto;
+    margin-bottom: -20px;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.countdown-item {
+    flex: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.countdown-item span {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: 2.2rem;
+    font-weight: 300;
+    color: white;
+    display: block;
+    letter-spacing: 1px;
+    line-height: 1;
+    margin-bottom: 3px;
+}
+
+.countdown-label {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-size: 0.7rem !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 300;
+    margin-top: 3px;
+}
+
+/* Приглашение */
+.invitation {
+    background-color: #252525;
+    color: #ffffff;
+    padding: 60px 0;
+}
+
+.invitation .section-title {
+    color: #ffffff;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+}
+
+.invitation-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.invitation-text {
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    max-width: 100%;
+    margin: 0 auto;
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    padding: 0 10px;
+}
+
+.invitation-text p {
+    margin-bottom: 20px;
+}
+
+.invitation-text strong {
+    font-size: 1.3rem;
+    color: #fff;
+    font-weight: 600;
+}
+
+/* Календарь - оптимизирован для мобильных */
+.calendar-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.calendar {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 20px 15px;
+    color: #ffffff;
+    width: 100%;
+    max-width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.calendar-header {
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 15px;
+}
+
+.calendar-header h3 {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: 1.5rem;
+    color: #ffffff;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 0 5px;
+    font-size: 0.8rem;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    padding: 0 5px;
+}
+
+.day {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    font-weight: 300;
+    font-size: 1rem;
+    transition: all 0.2s;
+    background: transparent;
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+}
+
+.day:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.day.other-month {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.day.wedding-day {
+    background: transparent;
+    color: #ffffff;
+    font-weight: 600;
+    transform: scale(1);
+    box-shadow: none;
+    border: 2px solid #ffffff;
+    position: relative;
+}
+
+.day.wedding-day::after {
+    content: '♥';
+    position: absolute;
+    bottom: -18px;
+    font-size: 0.7rem;
+    color: #ffffff;
+}
+
+.calendar-legend {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.wedding-day-color {
+    width: 16px;
+    height: 16px;
+    background: transparent;
+    border: 2px solid #ffffff;
+    border-radius: 3px;
+}
+
+/* Место проведения */
+.location {
+    background-color: white;
+    padding: 60px 0;
+    color: #252525;
+}
+
+.location .section-title {
+    color: #252525;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+}
+
+.location-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.location-text {
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    max-width: 100%;
+    margin: 0 auto;
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    padding: 0 10px;
+}
+
+.location-text p {
+    margin-bottom: 15px;
+}
+
+.location-text strong {
+    color: #252525;
+}
+
+.location-image {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.location-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.location-image:hover img {
+    transform: scale(1.02);
+}
+
+.map-btn {
+    display: block;
+    margin: 25px auto 0;
+    padding: 14px 35px;
+    background-color: #252525;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 2px solid #252525;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    width: 90%;
+    max-width: 300px;
+}
+
+.map-btn:hover {
+    background-color: white;
+    color: #252525;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ДЕТАЛИ - полностью переработанный дизайн для мобильных */
+.details {
+    background-color: #252525;
+    color: #ffffff;
+    padding: 60px 0;
+    position: relative;
+}
+
+.details .section-title {
+    color: #ffffff;
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.details .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Упрощенная вертикальная временная шкала для мобильных */
+.timeline {
+    max-width: 100%;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 10px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 32px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, 
+        transparent 0%, 
+        rgba(255, 255, 255, 0.1) 5%, 
+        rgba(255, 255, 255, 0.2) 50%, 
+        rgba(255, 255, 255, 0.1) 95%, 
+        transparent 100%);
+}
+
+.timeline-item {
+    display: flex;
+    margin-bottom: 40px;
+    position: relative;
+    align-items: flex-start;
+}
+
+.timeline-time {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.95);
+    min-width: 70px;
+    padding-right: 20px;
+    text-align: right;
+    position: relative;
+    letter-spacing: 0.5px;
+    line-height: 1.3;
+}
+
+.timeline-content {
+    flex-grow: 1;
+    padding-left: 35px;
+    position: relative;
+}
+
+/* Точки на временной линии */
+/* .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 29px;
+    top: 8px;
+    width: 12px;
+    height: 12px;
+    background: #ffffff;
+    border-radius: 50%;
+    z-index: 2;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1), 0 0 15px rgba(255, 255, 255, 0.2);
+    transition: all 0.3s;
+} */
+
+/* .timeline-item:hover::before {
+    transform: scale(1.2);
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2), 0 0 20px rgba(255, 255, 255, 0.3);
+} */
+
+.timeline-content h3 {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    color: #ffffff;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.timeline-content h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 35px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.timeline-content p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    line-height: 1.6;
+    font-weight: 300;
+    letter-spacing: 0.2px;
+}
+
+/* Декоративные линии от точек к контенту */
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 0;
+    width: 15px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Пожелания */
+.wishes {
+    background-color: white;
+    padding: 60px 0;
+    color: #252525;
+}
+
+.wishes .section-title {
+    color: #252525;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+}
+
+.wishes-content {
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 15px;
+}
+
+.wishes-text {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    line-height: 1.7;
+    color: #333;
+}
+
+.order-btn {
+    padding: 14px 35px;
+    background-color: #252525;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 2px solid #252525;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    width: 90%;
+    max-width: 300px;
+}
+
+.order-btn:hover {
+    background-color: white;
+    color: #252525;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Анкета */
+.rsvp {
+    background-color: #252525;
+    color: #ffffff;
+    padding: 60px 0;
+}
+
+.rsvp .section-title {
+    color: #ffffff;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+}
+
+.rsvp-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    padding: 0 15px;
+}
+
+.rsvp-form {
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 0 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+    padding: 16px 18px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    font-size: 1rem;
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    transition: all 0.3s;
+    width: 100%;
+}
+
+.form-group input[type="text"]:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Стили для radio кнопок */
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+}
+
+.radio-option input[type="radio"] {
+    display: none;
+}
+
+.radio-option label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 14px 18px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    margin-bottom: 0;
+    transition: all 0.3s;
+}
+
+.radio-option label:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.radio-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    margin-right: 12px;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.radio-option input[type="radio"]:checked + label {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.radio-option input[type="radio"]:checked + label .radio-circle {
+    border-color: #ffffff;
+}
+
+.radio-option input[type="radio"]:checked + label .radio-circle::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #ffffff;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Стили для выбора количества гостей */
+.guests-selector {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.guest-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1rem;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+}
+
+.guest-btn:hover {
+    border-color: rgba(255, 255, 255, 0.4);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.guest-btn.active {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #ffffff;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.submit-btn {
+    padding: 16px;
+    background-color: #ffffff;
+    color: #252525;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 15px;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(255, 255, 255, 0.1);
+}
+
+/* Футер */
+.footer {
+    height: 300px;
+    background-image: url('3.jpg');
+    background-repeat: no-repeat;
+    background-position: center 55%; /* Измените это значение */
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(37, 37, 37, 0.8);
+}
+
+.footer-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    padding: 30px 20px;
+}
+
+.footer-text h3 {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+}
+
+.phone-number {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin: 25px 0;
+    letter-spacing: 1.5px;
+}
+
+/* Модальные окна */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(3px);
+}
+
+.modal-content {
+    background-color: #ffffff;
+    color: #252525;
+    margin: 10% 5%;
+    padding: 30px 25px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 100%;
+    position: relative;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: 300;
+    cursor: pointer;
+    color: #252525;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+.close-modal:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.map-placeholder {
+    text-align: center;
+    padding: 30px 15px;
+    background: rgba(37, 37, 37, 0.05);
+    border-radius: 8px;
+    margin-top: 25px;
+}
+
+.map-placeholder i {
+    font-size: 3.5rem;
+    color: #252525;
+    margin-bottom: 15px;
+    opacity: 0.7;
+}
+
+.flower-phone {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #252525;
+    margin: 20px 0;
+}
+
+/* Адаптивность для очень маленьких экранов */
+@media (max-width: 360px) {
+    .section-title {
+        font-size: 1.6rem;
+        letter-spacing: 1px;
+    }
+    
+    .couple-names h1 {
+        font-size: 2.8rem;
+        letter-spacing: 2px;
+    }
+    
+    .ampersand {
+        font-size: 1.8rem;
+    }
+    
+    .countdown-item span {
+        font-size: 1.9rem;
+    }
+    
+    .countdown-label {
+        font-size: 0.65rem !important;
+    }
+    
+    .countdown-container {
+        width: 95%;
+        padding: 15px 10px;
+        margin-bottom: 80px;
+    }
+    
+    .calendar-header h3 {
+        font-size: 1.3rem;
+    }
+    
+    .calendar-days {
+        gap: 3px;
+    }
+    
+    .day {
+        height: 35px;
+        font-size: 0.9rem;
+    }
+    
+    .timeline-time {
+        font-size: 1.4rem;
+        min-width: 65px;
+        padding-right: 15px;
+    }
+    
+    .timeline-content {
+        padding-left: 25px;
+    }
+    
+    .timeline::before {
+        left: 26px;
+    }
+    
+    .timeline-item::before {
+        left: 25px;
+        width: 10px;
+        height: 10px;
+    }
+    
+    .timeline-content h3 {
+        font-size: 1.3rem;
+    }
+    
+    .timeline-content p {
+        font-size: 0.95rem;
+    }
+    
+    .guests-selector {
+        gap: 6px;
+    }
+    
+    .guest-btn {
+        width: 42px;
+        height: 42px;
+        font-size: 1rem;
+    }
+    
+    .radio-option label {
+        padding: 12px 15px;
+    }
+}
+
+/* Планшеты (768px и выше) - минимальная поддержка */
+@media (min-width: 768px) {
+    .container {
+        padding: 0 30px;
+    }
+    
+    .section-title {
+        font-size: 2.2rem;
+        margin-bottom: 50px;
+    }
+    
+    .couple-names h1 {
+        font-size: 4rem;
+    }
+    
+    .ampersand {
+        font-size: 2.5rem;
+    }
+    
+    .countdown-item span {
+        font-size: 2.8rem;
+    }
+    
+    .countdown-label {
+        font-size: 0.8rem !important;
+    }
+    
+    .countdown-container {
+        width: 80%;
+        margin-bottom: 120px;
+    }
+    
+    .timeline::before {
+        left: 35px;
+    }
+    
+    .timeline-item::before {
+        left: 34px;
+    }
+}
+
+/* Убираем синее выделение при нажатии на мобильных устройствах */
+button,
+a,
+input[type="button"],
+input[type="submit"],
+.guest-btn,
+.map-btn,
+.order-btn,
+.submit-btn,
+.player-btn,
+.close-modal {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Для состояний фокуса на кнопках */
+button:focus,
+a:focus,
+input[type="button"]:focus,
+input[type="submit"]:focus,
+.guest-btn:focus,
+.map-btn:focus,
+.order-btn:focus,
+.submit-btn:focus,
+.player-btn:focus,
+.close-modal:focus {
+    outline: none;
+}
+
+/* Для радио-кнопок и инпутов */
+input[type="radio"],
+input[type="text"],
+textarea {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Для ссылок */
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Для всего документа - дополнительная защита */
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+
+/* Добавьте эти стили в секцию .wishes */
+.dresscode-container {
+    margin: 40px 0 30px;
+    text-align: center;
+    width: 100%;
+    padding: 0 5px;
+}
+
+.dresscode-title {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: #252525;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 8px;
+}
+
+.dresscode-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 1px;
+    background: #252525;
+    opacity: 0.3;
+}
+
+.dresscode-subtitle {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 25px;
+    line-height: 1.5;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+.color-palette {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin: 20px 0;
+    padding: 0 10px;
+}
+
+.color-item {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid transparent;
+}
+
+.color-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    border-color: #252525;
+}
+
+/* Стили для подсказок на мобильных */
+.color-tooltip {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #252525;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.7rem;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    z-index: 10;
+    letter-spacing: 0.3px;
+}
+
+.color-item:hover .color-tooltip {
+    opacity: 1;
+    visibility: visible;
+    bottom: -40px;
+}
+
+.dresscode-note {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: 0.95rem;
+    color: #666;
+    margin-top: 35px;
+    font-style: italic;
+    border-top: 1px dashed rgba(37, 37, 37, 0.1);
+    padding-top: 20px;
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Адаптив для маленьких экранов */
+@media (max-width: 360px) {
+    .color-item {
+        width: 38px;
+        height: 38px;
+    }
+    
+    .dresscode-title {
+        font-size: 1.2rem;
+    }
+    
+    .dresscode-subtitle {
+        font-size: 0.95rem;
+    }
+    
+    .dresscode-note {
+        font-size: 0.9rem;
+    }
+}
+
+/* Для планшетов */
+@media (min-width: 768px) {
+    .color-item {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .color-palette {
+        gap: 15px;
+    }
+}
+
+/* Обеспечиваем правильные отступы в секции wishes */
+.wishes-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Корректируем отступ order-btn */
+.order-btn {
+    margin-top: 20px;
+}
+
+
+/* Добавьте эти стили в секцию .rsvp */
+.telegram-container {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 30px 20px;
+    margin: 30px auto 40px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    max-width: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Декоративный элемент фона */
+.telegram-container::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    width: 120px;
+    height: 120px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.telegram-container::after {
+    content: '';
+    position: absolute;
+    bottom: -40px;
+    left: -40px;
+    width: 150px;
+    height: 150px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.telegram-icon {
+    width: 70px;
+    height: 70px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.telegram-icon i {
+    font-size: 2.2rem;
+    color: #ffffff;
+    opacity: 0.9;
+}
+
+.telegram-container:hover .telegram-icon {
+    transform: scale(1.05);
+    border-color: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.telegram-title {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    color: #ffffff;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 8px;
+}
+
+.telegram-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.telegram-text {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 25px;
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.telegram-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #ffffff;
+    color: #252525;
+    padding: 14px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    border: 2px solid #ffffff;
+    width: auto;
+    min-width: 240px;
+    margin: 10px 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.telegram-btn i {
+    font-size: 1.2rem;
+    color: #0088cc;
+    transition: all 0.3s ease;
+}
+
+.telegram-btn:hover {
+    background: transparent;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.telegram-btn:hover i {
+    color: #ffffff;
+}
+
+.telegram-note {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 15px;
+    font-style: italic;
+    letter-spacing: 0.3px;
+}
+
+/* Адаптив для маленьких экранов */
+@media (max-width: 360px) {
+    .telegram-container {
+        padding: 25px 15px;
+    }
+    
+    .telegram-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .telegram-icon i {
+        font-size: 1.8rem;
+    }
+    
+    .telegram-title {
+        font-size: 1.2rem;
+    }
+    
+    .telegram-text {
+        font-size: 1rem;
+    }
+    
+    .telegram-btn {
+        padding: 12px 20px;
+        font-size: 0.85rem;
+        min-width: 200px;
+    }
+}
+
+/* Для планшетов */
+@media (min-width: 768px) {
+    .telegram-container {
+        max-width: 600px;
+        padding: 35px 30px;
+    }
+    
+    .telegram-text {
+        max-width: 400px;
+    }
+}
+
+/* Анимация появления */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.telegram-container {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Обновленные стили для map-btn (замените существующий блок .map-btn) */
+.map-btn {
+    display: inline-block;
+    margin: 25px auto 0;
+    padding: 14px 35px;
+    background-color: #252525;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 2px solid #252525;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    width: 90%;
+    max-width: 300px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.map-btn:hover {
+    background-color: white;
+    color: #252525;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Убираем underline при наведении */
+.map-btn:hover {
+    text-decoration: none;
+}
+
+/* Добавьте в секцию .rsvp */
+.submit-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+.submit-btn:disabled:hover {
+    background-color: #ffffff;
+    color: #252525;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Добавьте после стилей .location-image */
+.location-map {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    padding-bottom: 56.25%; /* Соотношение сторон 16:9 */
+    height: 0;
+}
+
+.location-map iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .location-map {
+        margin: 15px 0;
+    }
+}
+
+/* Можно также удалить или закомментировать старые стили .location-image */
+.location-image {
+    display: none; /* Скрываем старый блок с фото */
+}
+
+
+.submit-btn {
+    padding: 16px;
+    background-color: #ffffff;
+    color: #252525;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 15px;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.submit-btn:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(255, 255, 255, 0.1);
+}
+
+/* Стили для disabled состояния */
+.submit-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none !important;
+    background-color: #cccccc;
+    color: #666666;
+    box-shadow: none;
+}
+
+/* Стили для состояния загрузки */
+.submit-btn.loading {
+    background-color: #cccccc;
+    color: transparent;
+    pointer-events: none;
+}
+
+.submit-btn.loading::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    margin-left: -10px;
+    margin-top: -10px;
+    border: 2px solid #252525;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: button-spinner 0.8s linear infinite;
+}
+
+@keyframes button-spinner {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Стили для истории любви */
+.love-story {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    text-align: center;
+}
+
+.love-story-title {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #ffffff;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.love-story-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.love-story p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.9);
+    font-style: italic;
+}
+
+.love-story-author {
+    font-size: 1rem !important;
+    color: rgba(255, 255, 255, 0.6) !important;
+    margin-top: 25px;
+    font-style: normal !important;
+    letter-spacing: 0.5px;
+}
+
+/* Адаптив для мобильных */
+@media (max-width: 600px) {
+    .love-story {
+        margin-top: 30px;
+        padding-top: 25px;
+    }
+    
+    .love-story-title {
+        font-size: 1.5rem;
+    }
+    
+    .love-story p {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+    
+    .love-story-author {
+        font-size: 0.95rem !important;
+    }
+}
+
+@media (max-width: 360px) {
+    .love-story-title {
+        font-size: 1.3rem;
+    }
+    
+    .love-story p {
+        font-size: 0.95rem;
+    }
+}
+
+/* Замените блок .location-map и .location-image на эти стили */
+
+.location-image {
+    display: block; /* Включаем обратно */
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.location-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.location-image:hover img {
+    transform: scale(1.03);
+}
+
+/* Скрываем старый блок с картой */
+.location-map {
+    display: none;
+}
+
+/* Стили для новой группы радио-кнопок (алкоголь) */
+.form-group .radio-group + .radio-group {
+    margin-top: 10px;
+}
+
+/* Адаптив для фото */
+@media (max-width: 768px) {
+    .location-image {
+        border-radius: 8px;
+        margin: 15px 0;
+    }
+}
+
+/* Стили для чекбоксов (выбор алкоголя) */
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+.checkbox-option {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-option input[type="checkbox"] {
+    display: none;
+}
+
+.checkbox-option label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 14px 18px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.checkbox-option label:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.checkbox-square {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    margin-right: 12px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.checkbox-option input[type="checkbox"]:checked + label {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.checkbox-option input[type="checkbox"]:checked + label .checkbox-square {
+    border-color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.checkbox-option input[type="checkbox"]:checked + label .checkbox-square::after {
+    content: '✓';
+    position: absolute;
+    color: #ffffff;
+    font-size: 14px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Стили для опции "Не пью алкоголь" */
+#no-alcohol-option.checkbox-option input[type="checkbox"]:checked + label {
+    border-color: #ff6b6b;
+}
+
+#no-alcohol-option.checkbox-option input[type="checkbox"]:checked + label .checkbox-square {
+    border-color: #ff6b6b;
+}
+
+.field-note {
+    display: block;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 8px;
+    font-style: italic;
+}
+
+/* Адаптив для маленьких экранов */
+@media (max-width: 360px) {
+    .checkbox-option label {
+        padding: 12px 15px;
+        font-size: 0.95rem;
+    }
+    
+    .checkbox-square {
+        width: 18px;
+        height: 18px;
+        margin-right: 10px;
+    }
+}
